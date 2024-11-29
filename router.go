@@ -12,6 +12,7 @@ func setupRouter() http.Handler {
 
 	// register routes
 	mux.HandleFunc("/api/ping", handlers.Ping)
+	mux.HandleFunc("/api/qr", handlers.GetQRCode)
 
 	return middleware.LoggingMiddleware(mux)
 }
